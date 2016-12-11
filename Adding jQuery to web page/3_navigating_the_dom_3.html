@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Siblings</title>
+  </head>
+  <body>
+    
+    <!--forms will have a label, followed by an input element, followed by a placeholder for an error message -->
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+      <div id="name-error"></div></<br></br>
+    </div>
+
+    <!--Imagine a form with a checkbox, where upon selection you need to enable the two textboxes and labels immediately following it -->
+    <div>
+    <label for="provide-address">Provide address?</label>
+    <input type="checkbox" id="provide-address" />
+
+    <label for="street">Street:</label>
+    <input type="text" id="street" disabled="disabled" />
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" disabled="disabled" />
+    </div>
+    
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    		
+        var currentInput = $('#name');
+       // text allows you to modify the text in an element
+       currentInput.next().text('error message'); 
+
+
+       // the attr method is used to set (or read) an attribute
+       // the first parameter is the name of the attribute, the second is the value to set
+       // since we only need input elements, we'll use the name of the tag as the filter
+       $("#provide-address").change(function() {
+          if(this.checked) {
+              $('#provide-address').nextAll('input').removeAttr('disabled');
+          } else 
+              $('#provide-address').nextAll('input').attr('disabled', 'disabled');
+      });
+     
+    	});
+    </script>
+  </body>
+</html>

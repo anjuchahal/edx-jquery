@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Cloning</title>
+
+    <meta charset=utf-8 />
+    <style>
+      
+      div {
+        margin-top: .1em;
+      }
+
+      .btn {
+        font-size: 1em;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h2>clone</h2>
+    <div><button type="button" class="btn" id="executer">Execute!</button></div>
+
+    <div id="dialog">First line</div>
+
+    <div id="container"></div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	   //will execute when page is ready
+
+         //find the dialog element, clone it and put into a variable
+         var $dialog = $('#dialog').clone();
+         $dialog.removeAttr('id');
+
+         $('#executer').click(function() {
+           //each time we want a new instance, we need to clone it again
+          $('#container').append($dialog.clone());
+
+         //$('#executer').click(function() {
+          //$('#container').append($('#dialog').clone());
+
+        });
+    	 
+    	});
+    </script>
+  </body>
+</html>

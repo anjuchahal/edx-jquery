@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Sliding</title>
+
+    <meta charset=utf-8 />
+    <style>
+      
+      div {
+        margin-top: .1em;
+      }
+
+      .btn {
+        font-size: 1em;
+      }
+
+      #box {
+        height: 5em;
+        width: 5em;
+        background-color: darkblue;
+        color: white;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h2>sliding</h2>
+    <div><button type="button" class="btn" id="executer">Execute!</button></div>
+
+    <div id="box">Demo content</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+        $('#executer').click(function() {
+          $('#box').slideToggle(1000);
+         
+        });
+    	 
+    	});
+    </script>
+  </body>
+</html>

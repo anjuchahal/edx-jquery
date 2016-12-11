@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Positional selectors</title>
+  </head>
+  <body>
+    <h1>Hello H1!</h1>
+    
+    <header>
+      <div>
+        <h1>Inside header</h1>
+       </div>
+    </header><!-- /header -->
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    		//will execute when page is ready
+
+        //parent/child
+        //$('header > h1').text('Parent child');
+
+        //decendent
+        $('header h1').text('Decendent');
+    		
+    	});
+    </script>
+  </body>
+</html>

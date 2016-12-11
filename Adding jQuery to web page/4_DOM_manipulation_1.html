@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Working with attributes</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="target">Working with attributes</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    	
+      //update attribute value
+      $('#target').attr('style', 'color: red');
+
+      //read attribute value
+      //var style = $('#target').attr('style');
+      //alert(style);
+
+      //remove attribute value
+      $('#target').removeAttr('style');
+
+    	});
+    </script>
+  </body>
+</html>

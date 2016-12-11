@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Attribute based selectors</title>
+  </head>
+  <body>
+    <h1>Hello H1!</h1>
+     <h1 custom="banner">Custom Attribute!</h1>
+     <h1 class="col-md-4">Class starts with col</h1>
+    
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+
+      //find attributes based on attribute equality
+    	$('[custom="banner"]').text('Found by equality');
+
+      //find attributes based on attribute starts with
+      //$('[class^="col"]').text('Found by starts with');
+
+      //find attributes based on attribute contains
+      $('[class*="md"]').text('Found by contains');
+
+    	});
+    </script>
+  </body>
+</html>

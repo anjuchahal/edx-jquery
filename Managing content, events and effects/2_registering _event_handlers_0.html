@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Dynamic event handlers</title>
+
+    <meta charset=utf-8 />
+    <style>
+      div {
+        margin-top: .1em;
+      }
+      .btn {
+        font-size: 1em;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <form>
+    <div><button type="button" class="btn validate">First button</button></div>
+    <div><button type="button" class="btn validate">Second button</button></div>
+    <div><button type="button" class="btn">Third button</button></div>
+    </form>
+
+    <div id="display"></div>
+   
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+      
+    	 $('form').on('click', 'button.validate', function() {
+        $('#display').text('Clicked!');
+       });
+        
+
+    	});
+    </script>
+  </body>
+</html>

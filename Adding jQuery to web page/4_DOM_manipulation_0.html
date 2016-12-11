@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Adding and removing classes</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="target" class="blue">Demo Element</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    	
+      //Adding a class
+      //$('#target').addClass('red');
+
+      //Removing a class
+      //$('#target').removeClass('blue');
+
+       //Adding multiple classess
+      //$('#target').addClass('red blue');
+
+      //Removing multiple classes
+      $('#target').removeClass('blue red');
+
+    	});
+    </script>
+  </body>
+</html>

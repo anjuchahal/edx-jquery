@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Basic event handlers</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="target">Basic event handlers</div>
+
+    <div id="display">Another Demo</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    	
+      //$('#target').click(function() {
+        //this is the click event handler for the div element
+        //$('#display').text('Div was clicked');
+        // });
+
+        $('div').click(function() {
+          //alert('Div was clicked');
+          //this is the **DOM element** of the item that raised the event
+          //convert to jQuery object
+         $(this).text('Clicked');
+        });
+
+    	});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Removing and replacing items</title>
+
+    <meta charset=utf-8 />
+    <style>
+      
+      div {
+        margin-top: .1em;
+      }
+
+      .btn {
+        font-size: 1em;
+      }
+
+      .red {
+        color: red;
+      }      
+    </style>
+
+  </head>
+  <body>
+
+    <h2>replace</h2>
+    <div><button type="button" class="btn" id="executer">Execute!</button></div>
+
+    <div id="target">First line</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+        $('#executer').click(function() {
+          
+          $('#target').replaceWith('<div id="target" class="red">New content</div>'); 
+         
+        });
+    	 
+    	});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Triggering events</title>
+
+    <meta charset=utf-8 />
+    <style>
+      div {
+        margin-top: .1em;
+      }
+      .btn {
+        font-size: 1em;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <form>
+    <div><button type="button" class="btn updater">First</button></div>
+    <div><button type="button" class="btn updater">Second</button></div>
+    <div><button type="button" class="btn" id="target">Execute event handlers</button></div>
+    </form>
+
+    <div id="display"></div>
+   
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+      
+    	 $('button.updater').click(function() {
+         var existingText = $('#display').text();
+         var buttonText = $(this).text();
+         $('#display').text(existingText + ' - ' + buttonText);
+
+       });
+
+       $('#target').click(function() {
+         //performs a click on the buttons
+         //$('button.updater').click();
+
+         //just execute the event handler code by using trigger
+         //$('button.updater').trigger('click');
+
+         //just execute the first one
+         $('button.updater').triggerHandler('click');
+
+       });
+
+    	});
+    </script>
+  </body>
+</html>

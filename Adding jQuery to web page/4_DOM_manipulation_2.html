@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Modifying content</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="target">Modifying content</div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    	
+      //update content using text
+      //$('#target').text('Updated!');
+
+      //update content using html
+      //$('#target').html('Updated!');
+
+      //replace the html, will use the HTML in the parameter
+      //html will allow to modify HTML
+      //$('#target').html('<u>Updated!</u>');
+
+      //text is going to be for text only
+      $('#target').text('<u>Updated!</u>');
+
+    	});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Selecting items by position</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+
+      .parent {
+        margin-left: .8em;
+      }
+
+      .child {
+        margin-left: 1.6em;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="container">
+    <div style="color: black">First</div>
+    <div style="color: black">Second</div>
+    <div style="color: black">Third</div>
+    <div id="target" style="color: black">Fourth (Target)</div>
+    <div style="color: black">Fifth</div>
+    <div style="color: black">Sixth</div>
+    <div style="color: black">Seventh</div>
+    </div>
+
+    <div id="display"></div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+    	
+      //index returns the position of an item in a collection starting from 0 index
+      //it doesn't take a selector directly but takes an element or a jQuery object	
+      var element = $('#target');
+      var container = $('#container');
+      var index = container.children().index(element); 
+
+      //display the index of the element
+      $('#display').text('Index is ' +index); 
+
+      //get gives an error message that object doesn't support this property or method.
+      //container.children().get(index).attr('style', 'color:red');
+
+      //get returns a DOM object, **NOT** a jQuery object
+      var foundElement = container.children().get(index);
+      //convert to a jquery object
+      var jQueryObject = $(foundElement);
+      jQueryObject.attr('style', 'color:red');
+        
+    	});
+    </script>
+  </body>
+</html>

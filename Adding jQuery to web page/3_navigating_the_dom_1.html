@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Parent child relationships</title>
+  </head>
+  <body>
+    
+    <nav id="navigation">
+    <ul>
+        <li><a href="http://www.microsoft.com">Microsoft</a></li>
+        <li><a href="http://www.adventure-works.com">AdventureWorks</a></li>
+        <li><a href="register">Register</a></li>
+    </ul>
+</nav>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    		//will execute when page is ready
+    		
+        // select the nav element by its ID
+        var navigation = $('#navigation');
+
+        // select all a elements with an href that starts with http://
+        navigation.find('a[href^="http://"]').attr('style', 'color:#0f0');
+
+    	});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Event object</title>
+
+    <meta charset=utf-8 />
+    <style>
+      body {
+        font-size: 32px;
+      }
+
+      div {
+        margin-top: .1em;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <div id="target">Event object</div>
+
+    <div id="display"></div>
+
+    <script src="./scripts/jquery-3.1.1.min.js"></script>
+    <script>
+    	$(function(){
+    	//will execute when page is ready
+      
+    	 $('#target').click(function(event) {
+          output ='User clicked on ' + event.pageX + '/' + event.pageY;
+          $('#display').text(output);
+
+        });
+
+    	});
+    </script>
+  </body>
+</html>
